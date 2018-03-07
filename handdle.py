@@ -25,9 +25,53 @@ list_info ={
     "key_sheet_name":"西餐厅",
      "col_source":2,
      "col_target":3
+   },
+   {
+    "path":"./source/model/茶餐厅.xls",
+    "key_sheet_name":"茶餐厅",
+     "col_source":2,
+     "col_target":3
+   },
+   {
+    "path":"./source/model/D5.xls",
+    "key_sheet_name":"D5",
+     "col_source":2,
+     "col_target":3
+   },
+   {
+    "path":"./source/model/D4.xls",
+    "key_sheet_name":"D4",
+     "col_source":2,
+     "col_target":3
+   },
+   {
+    "path":"./source/model/小弄堂.xls",
+    "key_sheet_name":"小弄堂",
+     "col_source":2,
+     "col_target":2
+   },
+   {
+    "path":"./source/model/A2.xls",
+    "key_sheet_name":"A2",
+     "col_source":2,
+     "col_target":3
+   },
+   {
+    "path":"./source/model/37#.xls",
+    "key_sheet_name":"37#",
+     "col_source":2,
+     "col_target":3
+   },
+   {
+    "path":"./source/model/A3.xls",
+    "key_sheet_name":"A3",
+     "col_source":2,
+     "col_target":3
    }
   ]
 }
+
+
 
    
 
@@ -115,7 +159,7 @@ def filled_data(item,list_all):
 			# ws.write(obj['row'], obj['col'], obj['cell_temp'],style)
 			ws.write(obj['row'], obj['col']+10, obj['cell_temp'],style)
 		else:
-			print("connt find ",obj)
+			print(item["key_sheet_name"],"connt find ... ",obj)
 	wb.save(target_path_model)
 
     
@@ -130,6 +174,7 @@ copy_file(path_or,path_tar)
 for item in list_info["content"]:
 	 list_data_item = get_data_corresponding(item)
 	 filled_data(item,list_data_item)
+	 print("finished ...",item["key_sheet_name"])
 
 
 
